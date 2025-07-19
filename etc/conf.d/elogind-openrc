@@ -1,5 +1,0 @@
-# /etc/conf.d/elogind
-
-# Extra command-line arguments for the elogind daemon.
-#
-# elogind_opts=""

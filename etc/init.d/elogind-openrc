@@ -2,28 +2,10 @@
 
 description="Starts the elogind user, seat, and session manager"
 command="/usr/libexec/elogind"
-command_args="${elogind_opts}"
-pidfile="/run/elogind.pid"
-
-# Using supervise-daemon makes the service very robust and handles auto-restarts.
+command_args="--no-daemon"
 supervisor=supervise-daemon
 
 depend() {
-	# elogind provides a D-Bus service.
 	need dbus
-	# This script provides the 'elogind' virtual service.
 	provide elogind
-}
-
-reload() {
-	ebegin "Reloading elogind configuration"
-	start-stop-daemon --signal HUP --pidfile "${pidfile}"
-	eend $?
-}
-
-restart() {
-	ebegin "Gracefully restarting elogind"
-	# The original script used SIGINT for a graceful restart that preserves sessions.
-	start-stop-daemon --stop --signal INT --pidfile "${pidfile}"
-	eend $?
 }
