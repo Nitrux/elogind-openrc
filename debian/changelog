@@ -1,3 +1,9 @@
+elogind-openrc (0.0.3)  nitrux; urgency=medium
+
+  * Remove non-existent flags.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Sun, 20 Jul 2025 05:51:00 -0500
+
 elogind-openrc (0.0.2)  nitrux; urgency=medium
 
   * Use supervise-daemon for daemons.

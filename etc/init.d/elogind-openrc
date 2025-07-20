@@ -2,7 +2,6 @@
 
 description="Starts the elogind user, seat, and session manager"
 command="/usr/libexec/elogind"
-command_args="--no-daemon"
 supervisor=supervise-daemon
 
 depend() {
